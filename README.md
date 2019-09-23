@@ -14,6 +14,6 @@ In this game, you are a wizard’s apprentice. You’ll explore the wizard’s h
  ## Supported movements 
    - ``` (look)  ``` : gives you information of your surrounding 
    - ``` (walk '{direction}) ``` walks you to a direction and then performs ``` (look) ``` to describe the surrounding
- ... more to come 
+#### more to come ... 
   
  
