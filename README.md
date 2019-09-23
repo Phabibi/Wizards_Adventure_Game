@@ -1,1 +1,2 @@
-#In this game, you are a wizard’s apprentice. You’ll explore the wizard’s house. 
+# An adventure game using common LISP
+![alt text](http://www.lisperati.com/world.jpg)
