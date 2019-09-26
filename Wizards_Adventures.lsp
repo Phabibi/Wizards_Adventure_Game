@@ -63,4 +63,30 @@
             (look))
      '(you cannot go that way.))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;THE REPLE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun startgame()
+  (let ((cmd (game_read)))
+           (unless (eq (car cmd) 'bye)
+             (print (game_eval cmd))
+             (startgame))))
 
+(defun game_read ()
+  ;;this will read a command from command line in a "(command)" format 
+  ;;the 'String is there since 'String command will make "command"
+  (let ((cmd (read-from-string 
+                (concatenate 'string "(" (read-line) ")"))))
+  ;; this little guy is a local function that will just quotes the command 
+  ;; walk east  -> (walk 'east) given the fact that cmd = "(walk east)" 
+  ;; *side-note* : quote-it will call it self untill cdr is just NIL aka we've parsed everythng
+       (flet ((quote-it (x)
+                (list 'quote x)))
+             (cons (car cmd) (mapcar #'quote-it (cdr cmd))))))
+
+
+(defparameter bin '(look walk pickup inventory))
+;; This guy evalutes our command , in a way we want , ie doesnt allow what shouldnt be allowed 
+(defun game_eval (expr)
+  (if (member (car expr) bin)
+      (eval expr)
+     '(I dont know what youre saying dude!)))
+ 
