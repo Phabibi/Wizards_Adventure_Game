@@ -11,9 +11,14 @@ In this game, you are a wizard’s apprentice. You’ll explore the wizard’s h
 
  - type ``` clisp ``` in the command line to launch clisp interpreter 
  - ``` (load 'Wizards_Adventures) ```
+ - to start the game : `(startgame)`
+ - to exit the game : `(bye)`
  ## Supported movements 
-   - ``` (look)  ``` : gives you information of your surrounding 
-   - ``` (walk '{direction}) ``` walks you to a direction and then performs ``` (look) ``` to describe the surrounding
+   - ```  look  ``` : gives you information of your surrounding 
+   - ``` walk {direction} ``` walks you to a direction and then performs ``` look ``` to describe the surrounding
+   - ``` pickup {item_name} ``` picks up an item and puts it into inventory 
+   - ``` inventory ``` shows your current inventory 
+   - ``` drop {item_name} ``` drops the selecet item and performs ``` inventory ``` 
 #### more to come ... 
   
  
